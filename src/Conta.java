@@ -14,7 +14,7 @@ public abstract class Conta implements IConta {
         this.cliente = cliente;
     }
 
-  
+    @Override
     public void sacar(double valor) {
         if(valor <= 0) {
             System.out.println("Valor inválido para saque!");
@@ -27,7 +27,7 @@ public abstract class Conta implements IConta {
         saldo -= valor;
     }
 
-
+    @Override
     public void depositar(double valor) {
         if(valor <= 0) {
             System.out.println("Valor inválido para depósito!");
@@ -36,6 +36,7 @@ public abstract class Conta implements IConta {
         saldo += valor;
     }
 
+    @Override
     public void transferir(double valor, IConta contaDestino) {
         this.sacar(valor);
         contaDestino.depositar(valor);
@@ -45,7 +46,6 @@ public abstract class Conta implements IConta {
     public int getNumero() { return numero; }
     public double getSaldo() { return saldo; }
 
-    // Imprime informações da conta com formato melhorado
     protected void imprimirInfosComuns() {
         System.out.println("==== Informações da Conta ====");
         System.out.println("Titular: " + cliente.getNome());
