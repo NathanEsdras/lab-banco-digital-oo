@@ -31,7 +31,6 @@ public class Banco {
             this.contas.add(conta);
         }
     }
-
     public Conta buscarConta(int numero) {
         if (contas != null) {
             for (Conta c : contas) {
@@ -42,7 +41,6 @@ public class Banco {
         }
         return null; 
     }
-
     public void imprimirResumoContas() {
         System.out.println("=== Resumo das Contas do Banco " + nome + " ===");
         if (contas != null && !contas.isEmpty()) {
